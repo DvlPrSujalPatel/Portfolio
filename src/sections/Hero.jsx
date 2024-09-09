@@ -1,12 +1,17 @@
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, Ring } from "@react-three/drei";
 import { HackerRoom } from "../components/HackerRoom";
 import CanvasLoader from "../components/CanvasLoader";
 // import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants";
 import Target from "../components/Target";
+import ReactLogo from "../components/ReactLogo";
+import Cube from "../components/Cube";
+import Rings from "../components/Rings";
+import HeroCamera from "../components/HeroCamera";
+import Button from "../components/Button";
 
 
 const Hero = () => {
@@ -65,23 +70,33 @@ const Hero = () => {
       </div>
 
       <div className="w-full h-full absolute inset-0">
-            {/* <Leva /> */}
+        {/* <Leva /> */}
         <Canvas className="w-full h-full">
           <Suspense fallback={<CanvasLoader />}>
             <PerspectiveCamera makeDefault position={[0, 0, 20]} />
-            <HackerRoom
-              position={sizes.deskPosition}
-              scale={ sizes.deskScale}
-              rotation={[0, Math.PI, 0]}
-            />
+            <HeroCamera>
+              <HackerRoom
+                position={sizes.deskPosition}
+                scale={sizes.deskScale}
+                rotation={[0, Math.PI, 0]}
+              />
+            </HeroCamera>
             <group>
-                <Target position={sizes.targetPosition} />
+              <Target position={sizes.targetPosition} />
+              <ReactLogo posqtion={sizes.reactLogoPosition} />
+              <Cube position={sizes.cubePosition} />
+              <Rings position={sizes.ringPosition} scale={sizes.ringScale} />
             </group>
 
             <ambientLight intensity={1} />
             <directionalLight position={[10, 10, 10]} intensity={0.5} />
           </Suspense>
         </Canvas>
+      </div>
+      <div className="absolute bottom-7 left-0 right-0 z-10 w-full c-space">
+        <a href="#contact" className="w-fit"> 
+          <Button name={`lets`} />
+        </a>
       </div>
     </section>
   );
