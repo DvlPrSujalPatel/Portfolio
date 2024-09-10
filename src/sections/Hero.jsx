@@ -82,7 +82,7 @@ const Hero = () => {
             </HeroCamera>
             <group>
               <Target position={sizes.targetPosition} />
-              <ReactLogo posqtion={sizes.reactLogoPosition} />
+              <ReactLogo position={sizes.reactLogoPosition} />
               <Cube position={sizes.cubePosition} />
               <Rings position={sizes.ringPosition} scale={sizes.ringScale} />
             </group>
@@ -93,7 +93,7 @@ const Hero = () => {
         </Canvas>
       </div>
       <div className="absolute bottom-7 left-0 right-0 z-10 w-full c-space">
-        <a href="#contact" className="w-fit">
+        <a href="#about" className="w-fit">
           <Button
             name={`Let's work together`}
             isBeam
