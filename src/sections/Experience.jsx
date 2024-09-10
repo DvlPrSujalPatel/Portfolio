@@ -32,9 +32,9 @@ const WorkExperience = () => {
             </Canvas>
           </div>
 
-          <div className="work-content flex justify-center items-center w-full h-full">
-            <h2 className="text-white-600 font-semibold text-2xl">No Past Job Experiences but, Looking For it</h2>
-            {/* <div className="sm:py-10 py-5 sm:px-5 px-2.5">
+          <div className="work-content ">
+            {/* <h2 className="text-white-600 font-semibold text-2xl">No Past Job Experiences but, Looking For it</h2> */}
+            <div className="sm:py-10 py-5 sm:px-5 px-2.5">
               {workExperiences.map((item, index) => (
                 <div
                   key={index}
@@ -64,7 +64,7 @@ const WorkExperience = () => {
                   </div>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
         </div>
       </div>
